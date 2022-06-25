@@ -1,0 +1,6 @@
+div.demo -> tab
+CTRL + S -> save
+CTRL + R -> refresh
+ATL + tab -> window switch
+CTRL + tab -> tab switch
+CTRL + Click / ALT + Click -> Multiple Cursor

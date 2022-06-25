@@ -1,0 +1,14 @@
+.demo{
+	/* Class */
+	color: green;
+}
+.title{
+	/*class*/
+	color: white;
+	background: black;
+}
+#test{
+	color: blue;
+	/*id*/
+	background: yellowgreen;
+}

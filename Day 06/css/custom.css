@@ -1,0 +1,22 @@
+.box{
+	width: 500px;
+	height: 500px;
+	/*background-color: red;*/
+	/* ../ ek folder bahar */
+	/* ../../ two folder back  */
+	border: 2px black solid;
+	background-image: url('../images/4.jpg');
+	background-size: 45% 45%;
+	background-repeat: no-repeat;
+	background-position: top left;	
+	/* x-axis y-axis  */
+	/*
+		px
+		%
+		cover
+		container
+		auto
+	*/
+	/*300px 300px*/
+	/* width height */
+}
