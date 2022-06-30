@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		.parent{
+			width: 1000px;
+			height: 500px;
+			border: 2px black solid;
+		}
+		.col-1{
+			width: 490px;
+			/*500 - 5 - 5 = 490*/
+			height: 500px;
+			/*500 - 5 - 5 = 490*/
+			border-left: 5px red solid;
+			border-right: 5px green solid;
+			float: left;
+		}
+		.col-2{
+			width: 490px;
+			height: 495px;
+			border: 5px green solid;
+			border-bottom: none;
+			float: left;
+		}
+	</style>
+</head>
+<body>
+	<div class="parent">
+		<div class="col-1"></div>
+		<div class="col-2"></div>
+	</div>
+</body>
+</html>

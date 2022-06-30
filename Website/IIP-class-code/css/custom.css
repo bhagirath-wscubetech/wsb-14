@@ -1,0 +1,91 @@
+/*CSS Reset*/
+*{
+	/*Select all*/
+	padding: 0;
+	margin: 0;
+}
+a{
+	text-decoration: none; 
+	color: inherit;
+}
+
+body{
+	background: black;
+}
+.main{
+	width: 1170px;
+	height: 1600px;
+	background: white;
+	margin: auto;
+}
+/*top contact css*/
+.top-contact{
+	width: 1170px;
+	height: 40px;
+	color: white;
+	font-family: verdana;
+	font-size: 20px;
+	background: rgb(52, 49, 48);
+}
+.top-left{
+	width: 500px;
+	height: 40px;
+	/*border: 2px red solid;*/
+	float: left;
+}
+.top-right{
+	width: 500px;
+	height: 40px;
+	/*border: 2px red solid;*/
+	float: right;
+	padding-right: 10px;
+}
+
+.top-img{
+	float: left;
+	margin: 10px 13px 0 23px;
+}
+.top-text{
+	margin-top: 7px;
+	float: left;
+}
+
+/*parent child*/
+.top-right .top-img{
+	float: right;
+}
+.top-right .top-text{
+	float: right;
+}
+
+/*menu container css*/
+.menu-container{
+	width: 1170px;
+	height: 140px;
+}
+.logo-box{
+	width: 165px;
+	margin-left: 50px;
+	margin-top: 8px;
+	float: left;
+}
+.menu{
+	width: 900px;
+	height: 140px;
+	float: right;
+}
+.menu-item{
+	font-size: 20px;
+	font-family: arial;
+	font-weight: bold;
+	float: left;
+	margin-top: 100px;
+	/*width: 140px;*/
+	padding: 0px 33px;
+}
+.menu-item:hover{
+	color: #00a8ec;
+}
+.active{
+	color: #00a8ec;
+}
