@@ -1,0 +1,65 @@
+*{
+	padding: 0;
+	margin: 0;
+	font-family: arial;
+}	
+a{
+	text-decoration: inherit;
+	color: inherit;
+}
+/*Universal CSS*/
+section{
+	width: 100%;
+}
+main{
+	width: 1000px;
+	margin: auto;
+	border: 1px red solid;
+}
+.left{
+	float: left;
+}
+.right{
+	float: right;
+}
+.clear{
+	clear: both;
+}
+/*-----------*/
+
+#top{
+	background: url('../images/bg_img.jpg');
+}
+header{
+	width: 100%;
+}
+.logo{
+	width: 400px;
+	margin-top: 20px;
+	height: 100px;
+}
+.contact{
+	font-size: 20px;
+	color: #09C;
+	width: 400px;
+	text-align: right;
+	margin-top: 20px;
+	height: 100px;
+}
+/* parent child  */
+.contact div{
+	margin-top: 10px;
+}
+
+nav{
+	width: 100%;
+	background: url("../images/menu_rept.jpg");
+	border-radius: 10px;
+	margin-top: 10px;
+} 
+nav li{
+	display: inline-block;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 14px;
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		.main{
+			width: 1000px;
+			height: 600px;
+			border: 2px black solid;
+			margin: auto;
+		}
+		.main div{
+			margin-top: 10px;	
+			padding: 10px;
+			font-size: 25px;
+		}
+		/*input, textarea{
+			width: 70%;
+			border-radius: 5px;
+			font-size: inherit;
+		}*/
+		.inputs{
+			width: 70%;
+			border-radius: 5px;
+			font-size: inherit;
+		}
+	</style>
+</head>
+<body>
+	<div class="main">
+		<form>
+			<div>
+				<label for="name">Name</label>
+				<input class="inputs" placeholder="Please enter your name" name="username" type="text" id="name">
+			</div>
+			<div>
+				<label for="name">Father Name</label>
+				<input class="inputs" name="userfname" type="text" id="name">
+			</div>
+			<div>
+				<label for="useremail">Email</label>
+				<input  class="inputs" placeholder="test@example.com" name="useremail" type="text" id="useremail">
+			</div>
+			<div>
+				<label for="addres">Address</label>
+				<!-- <input type="text"> -->
+				<textarea  class="inputs" name="useraddres" id="addres"></textarea>
+			</div>
+			<div>
+				<label>Upload your resume</label>
+				<input type="file" name="">
+			</div>
+			<div>
+				<label>Gender:</label>
+				<label for="male">Male</label>
+				<input type="radio" name="usergender" value="M" checked id="male">
+				<label for="female">Female</label>
+				<input type="radio" name="usergender" value="F" id="female">
+			</div>
+			<div>
+				<label>Intrested In</label>
+				<label for="w">Web Dev.</label>
+				<input id="w" type="checkbox" name="hobby" value="1" checked>
+				<label for="a">App Dev.</label>
+				<input id="a" type="checkbox" name="hobby" value="2" checked>
+				<label for="d">Digital Markeing</label>
+				<input id="d" type="checkbox" name="hobby" value="3">
+				<label for="c">Cyber Security</label>
+				<input id="c" type="checkbox" name="hobby" value="4">
+			</div>
+			<div>
+				<label>Country</label>
+				<select name="country" class="inputs">
+					<option>Select a country</option>
+					<option value="+91" selected>India</option>
+					<option value="+01">America</option>
+					<option value="+93">China</option>
+					<option value="+94">Sri Lanka</option>
+				</select>
+			</div>
+			<div>
+				<input type="submit" value="Save">
+				<input type="reset">
+			</div>
+		</form>
+	</div>
+</body>
+</html>

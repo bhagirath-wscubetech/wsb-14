@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		.main{
+			width: 1000px;
+			height: 600px;
+			border: 2px black solid;
+			margin: auto;
+		}
+		.main div{
+			margin-top: 10px;	
+			padding: 10px;
+			font-size: 25px;
+		}
+		/*input, textarea{
+			width: 70%;
+			border-radius: 5px;
+			font-size: inherit;
+		}*/
+		.inputs{
+			width: 70%;
+			border-radius: 5px;
+			font-size: inherit;
+		}
+	</style>
+</head>
+<body>
+	<div class="main">
+		<form>
+			<div>
+				<label for="name">Name</label>
+				<input class="inputs" maxlength="30" placeholder="Please enter your name" name="username" autofocus type="text" id="name">
+			</div>
+			<div>
+				<label for="name">Email</label>
+				<input class="inputs" placeholder="Please enter your Email" name="useremail" type="email" id="name">
+			</div>
+			<div>
+				<label for="name">Password</label>
+				<input class="inputs" placeholder="Please enter your Password" name="userpassword" type="password" id="name">
+			</div>
+			<div>
+				<label for="name">Age</label>
+				<input class="inputs" type="number" max="65" min="18" id="name">
+			</div>
+			<div>
+				<label>DOB</label>
+				<input class="inputs" type="week">
+			</div>
+			<div>
+				<label>Range</label>
+				<input class="inputs" type="range" value="3000" min="300" max="3000">
+			</div>
+			<div>
+				<input type="submit" value="Save">
+				<input type="reset">
+			</div>
+		</form>
+
+	</div>
+</body>
+</html>
