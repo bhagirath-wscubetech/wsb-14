@@ -1,0 +1,30 @@
+//parent
+1) display:flex
+
+2) flex-direction: 
+		row
+		column
+		row-reverse
+		column-reverse
+
+3) justify-content: (x-axis / horizontally) 
+		flex-start
+		flex-end
+		center
+		space-around
+		space-between
+		space-evenly
+
+4) align-items: (y-axis / vertically)
+		flex-start
+		flex-end
+		center
+		stretch
+
+//children
+
+5) align-self:
+		flex-start
+		flex-end
+		center
+		stretch
