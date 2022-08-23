@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent {
+            width: 1000px;
+            margin: auto;
+            display: flex;
+            justify-content: space-around;
+            margin-top: 10px;
+        }
+        
+        .parent button {
+            font-size: 20px;
+        }
+        
+        .box {
+            width: 25%;
+            height: 300px;
+            border: 2px black solid;
+            display: flex;
+            font-size: 50px;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        <div class="box">
+            Hello
+            <!-- 0 -->
+        </div>
+        <div class="box">
+            <!-- 1 -->
+        </div>
+        <div class="box">
+            <!-- 2 -->
+        </div>
+        <div class="box">
+            <!-- 3 -->
+        </div>
+    </div>
+    <div class="parent">
+        <button onclick="first()"> >>  0 </button>
+        <button onclick="second()"> >> 1 </button>
+        <button onclick="third()"> >>  2  </button>
+        <button onclick="fourth()"> >>  3  </button>
+    </div>
+    <script>
+        var boxes = document.getElementsByClassName("box")
+
+        function first() {
+            //  0 -> 1
+            const data = boxes[0].innerText; //get and store into a variable
+            boxes[1].innerText = data; // set from the variable
+            boxes[0].innerText = ""; // set empty
+        }
+
+        function second() {
+            // 1 - 2
+            const data = boxes[1].innerText;
+            boxes[2].innerText = data;
+            boxes[1].innerText = "";
+        }
+
+        function third() {
+            // 2    - 0
+            const data = boxes[2].innerText;
+            boxes[3].innerText = data;
+            boxes[2].innerText = "";
+        }
+
+        function fourth() {
+            // 2    - 0
+            const data = boxes[3].innerText;
+            boxes[0].innerText = data;
+            boxes[3].innerText = "";
+        }
+        // console.log(boxes[0]);
+        // console.log(boxes[1]);
+        // console.log(boxes[2]);
+    </script>
+</body>
+
+</html>

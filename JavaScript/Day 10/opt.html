@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function getOpt() {
+            var opt = Math.random();
+            var finalOpt = Math.ceil(opt * 10000);
+            if (finalOpt >= 1000 && finalOpt <= 9999) {
+                console.log(finalOpt);
+            } else {
+                getOpt() // recursion
+            }
+        }
+        getOpt() // first call
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent {
+            width: 1000px;
+            margin: auto;
+            display: flex;
+            justify-content: space-around;
+            margin-top: 10px;
+        }
+        
+        .parent button {
+            font-size: 20px;
+        }
+        
+        .box {
+            width: 25%;
+            height: 300px;
+            border: 2px black solid;
+            display: flex;
+            font-size: 50px;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        <div class="box">
+            Hello
+            <!-- 0 -->
+        </div>
+        <div class="box">
+            <!-- 1 -->
+        </div>
+        <div class="box">
+            <!-- 2 -->
+        </div>
+        <div class="box">
+            <!-- 3 -->
+        </div>
+    </div>
+    <div class="parent">
+        <button onclick="move(0,1)"> >>  0 </button>
+        <button onclick="move(1,2)"> >> 1 </button>
+        <button onclick="move(2,3)"> >> 2  </button>
+        <button onclick="move(3,0)"> >> 3  </button>
+    </div>
+    <script>
+        var boxes = document.getElementsByClassName("box")
+
+        function move(from, to) {
+            // from - to
+            const data = boxes[from].innerText;
+            boxes[to].innerText = data;
+            boxes[from].innerText = "";
+        }
+    </script>
+</body>
+
+</html>
