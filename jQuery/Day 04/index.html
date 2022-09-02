@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        
+        .text-danger {
+            color: red;
+        }
+        
+        .bar {
+            width: 100%;
+            height: 40px;
+            background-color: rgb(39, 77, 6);
+            margin-bottom: 10px;
+            transition: 1s;
+        }
+        
+        .parent {
+            max-width: 1000px;
+            margin: 10px auto;
+            box-shadow: 0px 0px 4px gray;
+            padding: 15px;
+        }
+        
+        textarea {
+            margin-top: 10px;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        <div class="bar"></div>
+        <span>Max 500 char.</span>
+        <textarea name="" id="" cols="30" rows="10" maxlength="500"></textarea>
+    </div>
+    <div class="parent">
+        <div class="bar"></div>
+        <span>Max 200 char.</span>
+        <textarea name="" id="" cols="30" rows="10" maxlength="200"></textarea>
+    </div>
+    <script src="js/jquery-3.6.1.min.js"></script>
+    <script>
+        var textAreaBoxes = $("textarea")
+
+        textAreaBoxes.keyup(
+            function() {
+                const maxLength = $(this).attr("maxlength");
+                const data = $(this).val()
+                const remaining = maxLength - data.length;
+                // const percent = 100 - (remaining * 100) / maxLength;
+                const percent = (remaining * 100) / maxLength;
+                // console.log(percent);
+                $(this).prevAll(".bar").css({
+                    width: percent + "%"
+                })
+                if ((maxLength / 2) > remaining) {
+                    // true -> red
+                    $(this).prev("span").addClass("text-danger");
+                } else {
+                    // false ->
+                    $(this).prev("span").removeClass("text-danger");
+                }
+                $(this).prev("span").text(remaining + " chars left"); // traversing
+                // console.log(remaining);
+            }
+        )
+    </script>
+</body>
+
+</html>
