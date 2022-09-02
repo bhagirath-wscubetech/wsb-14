@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent {
+            width: 400px;
+            padding: 15px;
+            box-shadow: 0px 0px 5px gray;
+            margin: 10px auto;
+            display: flex;
+            transform: scaleX(0);
+            transition: 1s;
+            transform-origin: left center;
+        }
+        
+        .parent input {
+            width: 25%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent" id="msg">
+    </div>
+    <div class="parent">
+        <input type="text" placeholder="First">
+        <input type="text" placeholder="Second">
+        <select id="opr">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">x</option>
+            <option value="/">/</option>
+        </select>
+        <input type="button" value="Get Result">
+        <input type="text" placeholder="Result">
+    </div>
+    <script src="js/jquery-3.6.1.min.js"></script>
+    <script>
+        var inputs = $("input");
+        // inputs.[0] -> inputs.eq(0)
+        inputs.eq(2).click(
+            function() {
+                const a = inputs.eq(0).val();
+                const b = inputs.eq(1).val();
+                const opr = $("#opr").val();
+                // console.log(a, b, opr);
+                if (a != "" && b != "" && opr != "") {
+                    const resStr = a + opr + b;
+                    inputs.last().val(eval(resStr));
+                    $("#msg").slideUp();
+                } else {
+                    $("#msg").slideDown().text("Please enter the data first");
+                    // method chaining
+                }
+
+            }
+
+        )
+    </script>
+</body>
+
+</html>

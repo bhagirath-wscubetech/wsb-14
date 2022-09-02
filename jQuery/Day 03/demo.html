@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 500px;
+            height: 400px;
+            border: 2px black solid;
+            transition: 1s;
+        }
+        
+        .bg-red {
+            transform: translateX(100%);
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <button id="add">Add</button>
+    <button id="remove">Remove</button>
+    <button id="toggle">Toggle</button>
+    <script src="js/jquery-3.6.1.min.js"></script>
+    <script>
+        var box = $(".box");
+        $("#add").click(
+            function() {
+                box.addClass("bg-red");
+            }
+        )
+        $("#remove").click(
+            function() {
+                box.removeClass("bg-red");
+            }
+        )
+        $("#toggle").click(
+            function() {
+                box.toggleClass("bg-red");
+            }
+        )
+        box.mouseenter(
+            function() {
+                box.toggleClass("bg-red");
+            }
+        )
+        box.mouseleave(
+            function() {
+                box.toggleClass("bg-red");
+            }
+        )
+    </script>
+</body>
+
+</html>

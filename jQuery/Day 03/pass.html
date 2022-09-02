@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="password" id="pass">
+    <button id="btn">
+        <i class="fa fa-eye" id="eye"></i>
+    </button>
+    <script src="https://kit.fontawesome.com/bf520e6492.js" crossorigin="anonymous"></script>
+    <script src="js/jquery-3.6.1.min.js"></script>
+    <script>
+        var passBox = $("#pass");
+        $("#btn").click(
+            function() {
+                // console.log(passBox.attr("type")); // value get
+                if (passBox.attr("type") == "password") {
+                    // $(this).text("Hide password");
+                    $("#eye").removeClass("fa-eye").addClass("fa-eye-slash");
+                    passBox.attr("type", "text"); // set new value
+                } else {
+                    // $(this).text("Show password");
+                    $("#eye").addClass("fa-eye").removeClass("fa-eye-slash");
+                    passBox.attr("type", "password")
+                }
+            }
+        )
+    </script>
+</body>
+
+</html>

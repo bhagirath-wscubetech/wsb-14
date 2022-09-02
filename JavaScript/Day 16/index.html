@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="date" name="" id="date">
+    <button onclick="getAge()">Click</button>
+    <h3 id="res"></h3>
+    <script>
+        function add(a, b) {
+            return a + b;
+        }
+
+        var dateBox = document.getElementById("date")
+        var resBox = document.getElementById("res")
+        var current = new Date(); //today
+        var month = current.getMonth() + 1;
+        var monthWithZero = month < 10 ? "0" + month : month;
+        dateBox.max = `${current.getFullYear()}-${monthWithZero}-${current.getDate()}`;
+
+        function toYears(timestamp) {
+            return timestamp / 1000 / 60 / 60 / 24 / 365.25
+        }
+
+        function getAge() {
+            if (dateBox.value === "") return;
+            // console.log(dateBox.value); //get
+            const currentYear = toYears(current.getTime());
+            var dob = new Date(dateBox.value); // date of birth
+            const dobYear = toYears(dob.getTime());
+            const ageYear = currentYear - dobYear;
+            console.log(ageYear);
+            const str = ageYear > 1 ? " years" : " year";
+            resBox.innerText = Math.floor(ageYear) + str;
+            dateBox.value = "" //set
+        }
+    </script>
+</body>
+
+</html>

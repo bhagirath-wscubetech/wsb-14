@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 400px;
+            height: 200px;
+            box-shadow: 0px 0px 5px gray;
+            margin: auto;
+        }
+        
+        * {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <!-- <h2> testing the data </h2> -->
+        <input type="text" id="input">
+    </div>
+    <button id="get">Get</button>
+    <button id="set">Set</button>
+    <script src="js/jquery-3.6.1.min.js"></script>
+    <script>
+        // document.getElementById("box").innerText
+        // var data = $("#box").text();
+        // var box = $("#box");
+        var inputBox = $("#input");
+        $("#get").click(
+            function() {
+                //console.log(box.text()); //get // innerText
+                //console.log(box.html()); // innerHTML //get
+                console.log(inputBox.val()); // get
+            }
+        );
+        $("#set").click(
+            function() {
+                //box.text("Hello World!!!"); //set
+                //box.html("<h3> Hello World </h3>"); //set
+                inputBox.val(""); // get
+            }
+        );
+        // function setData() {
+        //     box.text("Hello World!!!"); //set
+        // }
+    </script>
+
+</body>
+
+</html>
