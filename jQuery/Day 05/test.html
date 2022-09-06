@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            width: 1000px;
+            margin: 10px auto;
+            padding: 10px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            box-shadow: 0px 0px 5px black;
+            list-style: none;
+            overflow: hidden;
+        }
+        
+        ul li {
+            margin: 10px;
+            padding: 10px;
+            color: white;
+            background-color: burlywood;
+            display: flex;
+            justify-content: space-between;
+            transition: 0.5s;
+            transform: translateX(0);
+            opacity: 1;
+        }
+        
+        .removeMe {
+            opacity: 0;
+            transform: translateX(-120%);
+        }
+        
+        .close {
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+        
+        .close:hover {
+            color: red;
+        }
+        
+        .parent {
+            width: 1000px;
+            display: flex;
+            margin: 10px auto;
+        }
+        
+        .parent input {
+            padding: 10px;
+            flex-grow: 1;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        <input type="text" id="todoitem">
+        <button onclick="addToDo()">Add</button>
+        <button onclick="todobox.empty()">Clear All</button>
+    </div>
+    <ul id="todobox">
+
+    </ul>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js "></script>
+    <script>
+        //  $(".close").click()
+        const todobox = $("#todobox");
+        const todoitem = $("#todoitem")
+
+        function addToDo() {
+            const item = todoitem.val();
+            if (item.length > 0) {
+                todobox.append(
+                    `
+                    <li>
+                        ${item}
+                    <span class="close" onclick="removeIt(this)">X</span>
+                    </li>
+                    `
+                )
+            }
+            todoitem.val("").focus();
+        }
+
+        function removeIt(close) {
+            const parentLi = $(close).parent();
+            parentLi.addClass("removeMe");
+            setTimeout(
+                function() {
+                    parentLi.remove();
+                },
+                500
+            );
+            // parentLi.slideUp(
+            //     1000,
+            //     function() {
+            //         parentLi.remove()
+            //     }
+            // )
+        }
+    </script>
+</body>
+
+</html>
