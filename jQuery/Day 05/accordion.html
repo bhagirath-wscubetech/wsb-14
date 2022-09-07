@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        
+        .parent {
+            max-width: 1200px;
+            padding: 15px;
+            margin: auto;
+            box-shadow: 0px 0px 1px black;
+        }
+        
+        .box {
+            width: 100%;
+            box-sizing: border-box;
+            border-bottom: 1px black solid;
+            margin: 10px 0;
+            padding: 5px;
+        }
+        
+        .desc {
+            display: none;
+        }
+        
+        .title {
+            font-size: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .title span {
+            transition: 500ms;
+            transform: rotate(0);
+            cursor: pointer;
+            user-select: none;
+        }
+        
+        .rotate {
+            transform: rotate(45deg) !important;
+        }
+        
+        .open {
+            display: initial;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        <div class="box">
+            <div class="title">
+                Title 1
+                <span>+</span>
+            </div>
+            <div class="desc open">
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium id saepe non asperiores dolorem explicabo mollitia quaerat deleniti nulla eius! Ipsam, error nam. Perferendis, exercitationem voluptates? Sequi nam odio perferendis!
+                </p>
+                <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit, nihil sunt consectetur explicabo eaque et saepe, reiciendis atque corporis esse quae, aut ab nostrum porro placeat quisquam ipsam architecto quaerat?
+                </p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="title">
+                Title 2
+                <span>+</span>
+            </div>
+            <div class="desc">
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium id saepe non asperiores dolorem explicabo mollitia quaerat deleniti nulla eius! Ipsam, error nam. Perferendis, exercitationem voluptates? Sequi nam odio perferendis!
+                </p>
+                <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit, nihil sunt consectetur explicabo eaque et saepe, reiciendis atque corporis esse quae, aut ab nostrum porro placeat quisquam ipsam architecto quaerat?
+                </p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="title">
+                Title 3
+                <span>+</span>
+            </div>
+            <div class="desc">
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium id saepe non asperiores dolorem explicabo mollitia quaerat deleniti nulla eius! Ipsam, error nam. Perferendis, exercitationem voluptates? Sequi nam odio perferendis!
+                </p>
+                <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit, nihil sunt consectetur explicabo eaque et saepe, reiciendis atque corporis esse quae, aut ab nostrum porro placeat quisquam ipsam architecto quaerat?
+                </p>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="title">
+                Title 3
+                <span>+</span>
+            </div>
+            <div class="desc">
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium id saepe non asperiores dolorem explicabo mollitia quaerat deleniti nulla eius! Ipsam, error nam. Perferendis, exercitationem voluptates? Sequi nam odio perferendis!
+                </p>
+                <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit, nihil sunt consectetur explicabo eaque et saepe, reiciendis atque corporis esse quae, aut ab nostrum porro placeat quisquam ipsam architecto quaerat?
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js "></script>
+    <script>
+        $(".title span").click(
+            function() {
+                $(".open").slideUp();
+                $(this)
+                    .toggleClass("rotate")
+                    .parent()
+                    .next()
+                    .slideToggle()
+                    .addClass("open")
+            }
+        )
+    </script>
+</body>
+
+</html>

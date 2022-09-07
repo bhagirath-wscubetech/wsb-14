@@ -8,7 +8,7 @@
     <title>Document</title>
     <style>
         ul {
-            width: 1000px;
+            max-width: 1000px;
             margin: 10px auto;
             padding: 10px;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -55,6 +55,11 @@
             flex-grow: 1;
             font-size: 20px;
         }
+        
+        .done {
+            text-decoration: line-through;
+            background-color: grey;
+        }
     </style>
 </head>
 
@@ -64,21 +69,28 @@
         <button onclick="addToDo()">Add</button>
         <button onclick="todobox.empty()">Clear All</button>
     </div>
+    <h2 style="text-align:center" id="resBox">
+        0/0
+    </h2>
     <ul id="todobox">
 
     </ul>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js "></script>
     <script>
+        var itemCount = 0;
+        var done = 0;
         //  $(".close").click()
         const todobox = $("#todobox");
         const todoitem = $("#todoitem")
 
         function addToDo() {
+            itemCount++;
+            updateResult();
             const item = todoitem.val();
             if (item.length > 0) {
                 todobox.append(
                     `
-                    <li>
+                    <li onclick="doneTask(this)">
                         ${item}
                     <span class="close" onclick="removeIt(this)">X</span>
                     </li>
@@ -89,6 +101,8 @@
         }
 
         function removeIt(close) {
+            itemCount--;
+            updateResult();
             const parentLi = $(close).parent();
             parentLi.addClass("removeMe");
             setTimeout(
@@ -97,12 +111,20 @@
                 },
                 500
             );
-            // parentLi.slideUp(
-            //     1000,
-            //     function() {
-            //         parentLi.remove()
-            //     }
-            // )
+        }
+
+        function doneTask(item) {
+            $(item).toggleClass("done")
+            updateResult();
+        }
+
+        function updateResult() {
+            const allDone = $(".done")
+            done = allDone.length;
+            console.log(allDone);
+            $("#resBox").html(`
+                ${done} / ${itemCount}
+            `)
         }
     </script>
 </body>
