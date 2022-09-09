@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .main-container {
+            width: 100%;
+            background: rgb(2, 0, 36);
+            background: linear-gradient(90deg, rgba(2, 0, 36, 1) 8%, rgba(9, 9, 121, 1) 38%, rgba(0, 212, 255, 1) 100%);
+        }
+        
+        .container {
+            color: white;
+            width: 100%;
+            padding: 10px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+        
+        .logo {
+            width: 200px;
+        }
+        
+        .nav-btn {
+            font-size: 40px;
+            display: none;
+        }
+        
+        .resp-nav {
+            position: fixed;
+            background-color: black;
+            height: 100vh;
+            left: -100%;
+            transition: 300ms;
+            font-size: 20px;
+            top: 0px;
+            z-index: 99999;
+            width: 60%;
+            display: none;
+        }
+        
+        .show-nav {
+            left: 0 !important;
+        }
+        
+        .resp-nav li {
+            padding: 20px;
+        }
+        
+        .banner {
+            height: 500px;
+            background: rgb(2, 0, 36);
+            background: linear-gradient(90deg, rgba(2, 0, 36, 1) 8%, rgba(9, 9, 121, 1) 38%, rgba(0, 212, 255, 1) 100%);
+            position: relative;
+        }
+        
+        .banner img {
+            position: absolute;
+            right: 0;
+            width: 30%;
+            bottom: 0;
+        }
+        
+        @media only screen and (min-width:1025px) and (max-width:1280px) {
+            .container {
+                width: 1150px;
+            }
+        }
+        
+        @media (min-width:1281px) {
+            .container {
+                width: 1240px;
+            }
+        }
+        
+        @media only screen and (min-width:0) and (max-width:768px) {
+            .nav {
+                display: none;
+            }
+            .nav-btn {
+                display: initial;
+            }
+            .resp-nav {
+                display: initial;
+            }
+            .logo {
+                width: 150px;
+            }
+            .banner img {
+                width: 100%;
+                bottom: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="container">
+            <img src="img/logo.svg" alt="" class="logo" />
+            <div class="nav-btn">
+                <i class="fa fa-bars" onclick="toggleNav()"></i>
+            </div>
+            <ul class="nav">
+                <li>
+                    <a href="">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="">
+                        About
+                    </a>
+                </li>
+
+                <li>
+                    <a href="">
+                        Course
+                    </a>
+                </li>
+
+                <li>
+                    <a href="">
+                        Gallery
+                    </a>
+                </li>
+
+                <li>
+                    <a href="">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+            <!-- Responsive nav -->
+            <ul class="resp-nav">
+                <li>
+                    <a href="">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="">
+                        About
+                    </a>
+                </li>
+
+                <li>
+                    <a href="">
+                        Course
+                    </a>
+                </li>
+
+                <li>
+                    <a href="">
+                        Gallery
+                    </a>
+                </li>
+
+                <li>
+                    <a href="">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+            <!-- ------------- -->
+        </div>
+    </div>
+    <div class="main-container banner">
+        <img src="img/2_corousel.png" alt="">
+    </div>
+    <script src="https://kit.fontawesome.com/bf520e6492.js" crossorigin="anonymous"></script>
+    <script>
+        var respNav = document.querySelector(".resp-nav");
+        // var respNav = $(".resp-nav");
+        function toggleNav() {
+            respNav.classList.toggle("show-nav");
+            // respNav.toggleClass("show-nav")
+        }
+    </script>
+</body>
+
+</html>
